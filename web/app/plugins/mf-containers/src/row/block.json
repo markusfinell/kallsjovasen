@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "mf-containers/row",
+	"version": "0.1.0",
+	"title": "MF Row",
+	"category": "design",
+	"icon": "align-wide",
+	"description": "Row container",
+	"supports": {
+		"align": ["wide", "full"],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": [ "top", "bottom" ]
+		}
+	},
+	"textdomain": "mf-containers",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": "wide"
+		}
+	},
+	"parent": [
+		"mf-containers/section",
+		"mf-containers/column"
+	]
+}

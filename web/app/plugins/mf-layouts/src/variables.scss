@@ -1,0 +1,29 @@
+$sizes: (
+	'xs': 0.625rem,
+	'sm': 0.8rem,
+	'lg': calc(1.2 * 1rem),
+	'xl': calc(1.2 * 1.2 * 1rem),
+	'2-xl': calc(1.2 * 1.2 * 1.2 * 1rem),
+	'3-xl': calc(1.2 * 1.2 * 1.2 * 1.2 * 1rem),
+	'4-xl': calc(1.2 * 1.2 * 1.2 * 1.2 * 1.2 * 1rem)
+);
+
+$flex-justify: (
+	'baseline',
+	'center',
+	'start',
+	'end',
+	'flex-start',
+	'flex-end',
+	'space-around',
+	'space-between',
+	'space-evenly'
+);
+
+$flex-align: (
+	'baseline',
+	'center',
+	'flex-start',
+	'flex-end',
+	'stretch'
+);

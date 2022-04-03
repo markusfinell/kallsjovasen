@@ -1,0 +1,95 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "mf/layouts",
+	"version": "0.1.0",
+	"title": "MF Layouts",
+	"category": "design",
+	"icon": "smiley",
+	"description": "One block for creating any layout.",
+	"supports": {
+		"html": false,
+		"align": [ "full", "wide" ],
+		"color": {
+			"background": true,
+			"text": true
+		}
+	},
+	"textdomain": "mf-layouts",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": ""
+		},
+		"layoutType": {
+			"type": "string",
+			"default": "stack"
+		},
+		"stackGap": {
+			"type": "string",
+			"default": ""
+		},
+		"stackRecursive": {
+			"type": "boolean",
+			"default": false
+		},
+		"stackSplitAfter": {
+			"type": "string",
+			"default": "0"
+		},
+		"boxPadding": {
+			"type": "string",
+			"default": ""
+		},
+		"boxBorderWidth": {
+			"type": "string",
+			"default": ""
+		},
+		"boxInvert": {
+			"type": "boolean",
+			"default": false
+		},
+		"centerMax": {
+			"type": "string",
+			"default": ""
+		},
+		"centerAndText": {
+			"type": "boolean",
+			"default": false
+		},
+		"centerGutters": {
+			"type": "string",
+			"default": ""
+		},
+		"centerIntrinsic": {
+			"type": "boolean",
+			"default": false
+		},
+		"clusterJustify": {
+			"type": "string",
+			"default": "flex-start"
+		},
+		"clusterAlign": {
+			"type": "string",
+			"default": "flex-start"
+		},
+		"clusterGap": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}

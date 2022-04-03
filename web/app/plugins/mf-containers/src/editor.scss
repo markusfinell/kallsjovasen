@@ -1,0 +1,83 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.editor-styles-wrapper {
+	.wp-block-mf-containers-section {
+		border: 1px solid transparent;
+		padding: 0;
+
+		&:hover {
+			border-color: #eee;
+		}
+
+		> .block-editor-inner-blocks {
+			max-width: none;
+
+			> .block-editor-block-list__layout {
+				padding: 40px 0;
+			}
+		}
+	}
+
+	.wp-block-mf-containers-row {
+		border: 1px solid transparent;
+		display: block;
+		padding: 0;
+
+		&:hover {
+			border-color: #ccc;
+		}
+
+		&.alignwide {
+			max-width: var(--wp--custom--width--wide);
+		}
+
+		&:not(.alignwide):not(.alignfull) {
+			max-width: var(--wp--custom--width--content);
+		}
+
+		> .block-editor-inner-blocks {
+			position: relative;
+
+			> .block-editor-block-list__layout {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 1.5rem 0 25px;
+				position: static;
+			}
+		}
+	}
+
+	.wp-block-mf-containers-column {
+		border: 1px solid transparent;
+
+		&:hover {
+			border-color: #aaa;
+		}
+
+		> .block-editor-inner-blocks > .block-editor-block-list__layout {
+			padding-bottom: 25px;
+		}
+
+		.wp-block-mf-containers-row {
+			max-width: none !important;
+
+			&:first-child > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				padding-top: 0;
+			}
+
+			&:last-child > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				padding-bottom: 0;
+			}
+		}
+
+		&.is-selected {
+			.wp-block-mf-containers-row:nth-last-child(2) > .block-editor-inner-blocks > .block-editor-block-list__layout {
+				padding-bottom: 0;
+			}
+		}
+	}
+}

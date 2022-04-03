@@ -1,0 +1,119 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@import 'variables';
+
+.wp-block-mf-layouts {
+	&.l-stack {
+		display: flex;
+		flex-direction: column;
+
+		> * {
+			margin-block: 0;
+		}
+
+		&.recursive * {
+			margin-block: 0;
+		}
+
+		> * + *,
+		&.recursive * + * {
+			margin-block-start: var(--wp--custom--spacing--base, 1rem);
+		}
+
+		@each $size, $default in $sizes {
+			&.gap-#{$size} > * + *,
+			&.recursive.gap-#{$size} * + * {
+				margin-block-start: var(--wp--custom--spacing--#{$size}, $default);
+			}
+		}
+
+		&:only-child {
+			height: 100%;
+		}
+	}
+
+	&.l-box {
+		--border: max(1px, calc(var(--wp--custom--spacing--base, 1rem) / 8));
+		padding: var(--wp--custom--spacing--base, 1rem);
+		border: var(--border) solid;
+		outline: var(--border) transparent;
+		outline-offset: calc(var(--border) * -1);
+		color: var(--wp--preset--color--foreground, #000);
+		background-color: var(--wp--preset--color--background, #fff);
+
+		* {
+			color: inherit;
+		}
+
+		&.invert {
+			color: var(--wp--preset--color--background, #fff);
+			background-color: var(--wp--preset--color--foreground, #000);
+		}
+
+		@each $size, $default in $sizes {
+			&.padding-#{$size} {
+				padding: var(--wp--custom--spacing--#{$size}, $default);
+			}
+
+			&.border-width-#{$size} {
+				--border: max(1px, calc(var(--wp--custom--spacing--#{$size}, $default) / 8));
+			}
+		}
+	}
+
+	&.l-center {
+		box-sizing: content-box;
+		max-width: calc(30rem + var(--wp--custom--spacing--base, 1rem) * 10);
+		margin-inline: auto;
+		padding-inline: var(--wp--custom--spacing--base, 1rem);
+
+		&.intrinsic {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&.and-text {
+			text-align: center;
+		}
+
+		@each $size, $default in $sizes {
+			&.max-#{$size} {
+				max-width: calc(30rem + var(--wp--custom--spacing--#{$size}, $default) * 10);
+			}
+
+			&.gutters-#{$size} {
+				padding-inline: var(--wp--custom--spacing--#{$size}, $default);
+			}
+		}
+	}
+
+	&.l-cluster {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--wp--custom--spacing--base, 1rem);
+
+		@each $justify in $flex-justify {
+			&.justify-#{$justify} {
+				justify-content: #{$justify};
+			}
+		}
+
+		@each $align in $flex-align {
+			&.align-#{$align} {
+				align-items: #{$align};
+			}
+		}
+
+		@each $size, $default in $sizes {
+			&.gap-#{$size} {
+				gap: var(--wp--custom--spacing--#{$size}, $default);
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "mf-containers/column",
+	"version": "0.1.0",
+	"title": "MF Column",
+	"category": "design",
+	"icon": "columns",
+	"description": "Column container",
+	"supports": {
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"spacing": {
+			"padding": [ "top", "bottom" ]
+		}
+	},
+	"textdomain": "mf-containers",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"defaultWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"mobileWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"tabletWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"desktopWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"defaultOffset": {
+			"type": "number",
+			"default": 0
+		},
+		"mobileOffset": {
+			"type": "number",
+			"default": 0
+		},
+		"tabletOffset": {
+			"type": "number",
+			"default": 0
+		},
+		"desktopOffset": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"parent": ["mf-containers/row"]
+}

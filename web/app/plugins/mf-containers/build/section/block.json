@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "mf-containers/section",
+	"version": "0.1.0",
+	"title": "MF Section",
+	"category": "design",
+	"icon": "welcome-widgets-menus",
+	"description": "Section container",
+	"supports": {
+		"align": [ "full" ],
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"__experimentalLayout": {
+        	"allowSwitching": false,
+			"default": {
+				"inherit": true
+			}
+		},
+		"spacing": {
+			"padding": [ "top", "bottom" ]
+		}
+	},
+	"textdomain": "mf-containers",
+	"editorScript": "file:../index.js",
+	"editorStyle": "file:../index.css",
+	"style": "file:../style-index.css",
+	"attributes": {
+		"blockId": {
+			"type": "string"
+		},
+		"mediaId": {
+			"type": "number",
+			"default": 0
+		},
+		"mediaUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"layout": {
+			"type": "object",
+			"default": {
+				"inherit": true
+			}
+		}
+	}
+}

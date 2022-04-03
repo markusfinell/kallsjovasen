@@ -1,0 +1,113 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-mf-containers-section,
+.wp-block-mf-containers-row,
+.wp-block-mf-containers-column {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	box-sizing: border-box;
+}
+
+.wp-block-mf-containers-section {
+	padding: 3rem 0;
+}
+
+.wp-block-mf-containers-row {
+	padding: 1.5rem 0;
+	max-width: 1260px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+
+	&.alignfull {
+		max-width: none;
+	}
+}
+
+.wp-block-mf-containers-column {
+	padding: 0 1rem;
+	flex: 1 0 0%;
+
+	.wp-block-mf-containers-row {
+		margin-left: -1rem;
+		margin-right: -1rem;
+		max-width: none;
+
+		&:first-child {
+			padding-top: 0;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+[class*="col-"] {
+	width: 100%;
+	flex: 0 0 auto;
+}
+
+@for $i from 1 to 12 {
+	.col-#{$i} {
+		width: percentage(calc($i / 12));
+	}
+
+	.offset-#{$i} {
+		margin-left: percentage(calc($i / 12));
+	}
+}
+
+@media (min-width: 576px) {
+	@for $i from 1 to 12 {
+		.col-sm-#{$i} {
+			width: percentage(calc($i / 12));
+		}
+
+		.offset-sm-#{$i} {
+			margin-left: percentage(calc($i / 12));
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	@for $i from 1 to 12 {
+		.col-md-#{$i} {
+			width: percentage(calc($i / 12));
+		}
+
+		.offset-md-#{$i} {
+			margin-left: percentage(calc($i / 12));
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	@for $i from 1 to 12 {
+		.col-lg-#{$i} {
+			width: percentage(calc($i / 12));
+		}
+
+		.offset-lg-#{$i} {
+			margin-left: percentage(calc($i / 12));
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	@for $i from 1 to 12 {
+		.col-xl-#{$i} {
+			width: percentage(calc($i / 12));
+		}
+
+		.offset-xl-#{$i} {
+			margin-left: percentage(calc($i / 12));
+		}
+	}
+}
